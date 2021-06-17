@@ -1,0 +1,134 @@
+(1).what is difference between jdk and jre.
+JDK is a software development kit whereas JRE is a software bundle that allows Java program to run, whereas JVM is an environment for executing bytecode. The full form of JDK is Java Development Kit, while the full form of JRE is Java Runtime Environment
+(2.) what is the jvm.
+Java Virtual machine(JVM) is a very important part of both JDK and JRE because it is contained or inbuilt in both. Whatever Java program you run using JRE or JDK goes into JVM and JVM is responsible for executing the java program line by line hence it is also known as interpreter.
+(3).what are the different type of memory area allocated by jvm.
+1.Class(Method) Area
+2.Heap
+3.Stack
+4.Program Counter Register
+5.Native Method Stack
+1.Class Loader:It is a subsystem of JVM which is used to load class files.It is mainly responsible for three activities.
+Loading
+Linking
+Initialization
+2.Class(Method) Area: It stores class level data of every class such as the runtime constant pool, field and method data, the code for methods.
+3.Heap: It is used to allocate memory to objects at run time
+4.Stack:Each thread has a private JVM stack, created at the same time as thread. It is used to store data and partial results which will be needed while returning value for method and performing dynamic linking.
+Java Stack stores frames and a new frame is created each time at every invocation of the method.
+A frame is destroyed when its method invocation completes
+5.Program Counter Register: Each JVM thread which carries out the task of a specific method has a program counter register associated with it. The non-native method has a PC which stores the address of the available JVM instruction whereas, in a native method, the value of the program counter is undefined. PC register is capable of storing the return address or a native pointer on some specific platform.
+(4)what is JIT?
+The Just-In-Time (JIT) compiler is a component of the runtime environment that improves the performance of Java™ applications by compiling bytecodes to native machine code at run time. ... The JIT compiler helps improve the performance of Java programs by compiling bytecodes into native machine code at run time.
+(5).how java platform id different from other platforms?
+Java platform is a software-only platform that runs on the top of other hardware-based platforms, other platforms are mostly hardware software or hardware only and can be run only on hardware based. Programmer can develop Java code on any OS. Most of the other platforms do not have this capability.
+
+(6).why people say that java is 'write once and run anywhere' language?
+In Java, the program is not converted to code directly understood by Hardware, rather it is converted to bytecode(.class file), which is interpreted by JVM, so once compiled it generates bytecode file, which can be run anywhere (any machine) which has JVM( Java Virtual Machine) and hence it gets the nature of Write Once and Run Anywhere.
+(7).what are primitive data type.?
+byte: The byte data type is an 8-bit signed two's complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive). The byte data type can be useful for saving memory in large arrays, where the memory savings actually matters. They can also be used in place of int where their limits help to clarify your code; the fact that a variable's range is limited can serve as a form of documentation.
+
+short: The short data type is a 16-bit signed two's complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive). As with byte, the same guidelines apply: you can use a short to save memory in large arrays, in situations where the memory savings actually matters.
+
+int: By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -231 and a maximum value of 231-1. In Java SE 8 and later, you can use the int data type to represent an unsigned 32-bit integer, which has a minimum value of 0 and a maximum value of 232-1. Use the Integer class to use int data type as an unsigned integer. See the section The Number Classes for more information. Static methods like compareUnsigned, divideUnsigned etc have been added to the Integer class to support the arithmetic operations for unsigned integers.
+
+long: The long data type is a 64-bit two's complement integer. The signed long has a minimum value of -263 and a maximum value of 263-1. In Java SE 8 and later, you can use the long data type to represent an unsigned 64-bit long, which has a minimum value of 0 and a maximum value of 264-1. Use this data type when you need a range of values wider than those provided by int. The Long class also contains methods like compareUnsigned, divideUnsigned etc to support arithmetic operations for unsigned long.
+
+float: The float data type is a single-precision 32-bit IEEE 754 floating point. Its range of values is beyond the scope of this discussion, but is specified in the Floating-Point Types, Formats, and Values section of the Java Language Specification. As with the recommendations for byte and short, use a float (instead of double) if you need to save memory in large arrays of floating point numbers. This data type should never be used for precise values, such as currency. For that, you will need to use the java.math.BigDecimal class instead. Numbers and Strings covers BigDecimal and other useful classes provided by the Java platform.
+
+double: The double data type is a double-precision 64-bit IEEE 754 floating point. Its range of values is beyond the scope of this discussion, but is specified in the Floating-Point Types, Formats, and Values section of the Java Language Specification. For decimal values, this data type is generally the default choice. As mentioned above, this data type should never be used for precise values, such as currency.
+
+boolean: The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
+
+char: The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).
+(8)	What are reference data types?
+A reference type is a data type that's based on a class rather than on one of the primitive types that are built in to the Java language. This reference is the address of the memory location where the object is stored. To declare a variable using a reference type, you simply list the class name as the data type.
+(9) what is use of enum in java .
+Enums are used when we know all possible values at compile time, such as choices on a menu, rounding modes, command line flags, etc. It is not necessary that the set of constants in an enum type stay fixed for all time. In Java (from 1.5), enums are represented using enum data type.
+
+(10.)Write your own enum and check the class file code that is generated.
+class sample
+{
+    enum shap
+    {
+        circle, rectangular, square;
+    }
+        public static void main(String[] args)
+    {
+        shap c1 = shap.circle;
+        System.out.println(c1);
+    }
+}
+class file code:-
+Êþº¾   4 #
+  	   	  
+         shap InnerClasses <init> ()V Code LineNumberTable main ([Ljava/lang/String;)V 
+SourceFile 
+sample.java 
+ 
+          ! " sample java/lang/Object 
+sample$shap circle 
+Lsample$shap; java/lang/System out Ljava/io/PrintStream; java/io/PrintStream  println (Ljava/lang/Object;)V            
+ 
+          *· ±    
+        	       ,     ² L² +¶ ±    
+       	  
+ 
+ 
+       
+
+     @
+
+
+(11.)What happens when you assign a variable of primitive data type to another
+variable of same type?
+ example :-
+int i1=10;
+int i2=i1;
+so what will happen in memory
+i1  [10] 101  (address)
+        i2   [10] 102  (address )
+
+	   so here we are giving the i1 into i2  but both are taking saprate values ,because this is primitive data type  these  hold direct value that's why  i1 and i2 both are different and they contains distict values.both are not realated to  each other.
+
+
+(12)    Why do we suffix L with long, F with Float and D with double?
+       
+      When representing a float data type in Java, we should append the letter f to the end of the data type; otherwise it will save as double. The default value of a float in Java is 0.0f. Float data type is used when you want to save memory and when calculations don't require more than 6 or 7 digits of precision.
+      When you type "return value L" it means that you are telling the compiler that the value want returned is a long integer (32-bit) as opposed to int (16-bit).
+      There are 2 floating point types in java. i.e. float and double. The suffix D or d is appended to the value to designate the type as double and the suffix F or f is appended to designate the data as float. Floating point types can also be expressed using the E or e notation.
+
+(13)     If a variable of primitive data type is not assigned, what does it contain?
+      that a variable that is not initialized does not have a defined value, hence it cannot be used until it is assigned such a value. ... If the variable has been declared but not initialized, we can use an assignment statement to assign it a value.
+
+
+(14) Because floats and doubles cannot accurately represent the base 10 multiples that we use for money. This issue isn't just for Java, it's for any programming language that uses base 2 floating-point types. In base 10, you can write 10.25 as 1025 * 10-2 (an integer times a power of 10)
+
+(15)    Print "\u0022+\u0022" through code and explain the behaviour
+ 
+basically this u0022 is unicode of ( " ).so whenever we try to print it it prints space on console.
+System.out.println("\u0022+\u0022");
+actual :-
+System.out.println(" "+" ");
+
+
+(16) Why it is not preferred to use float and double in financial applications, write a program to discribe the issue. 
+      All floating point values that can represent a currency amount (in dollars and cents) cannot be stored exactly as it is in the memory. So, if we want to store 0.1 dollars (10 cents), float/double can not store it as it is. Instead, the binary can store only a closer approximation value (0.100000001490116119384765625 in decimal). The magnitude of this problem becomes significant (known as loss of significance) when we repetitively do arithmetic operations (multiply or divide) using these two data types.
+
+      public class DoubleForCurrency {
+        double total = 0.2;
+        for (int i = 0; i < 100; i++) {
+            total += 0.2;
+}
+        System.out.println("total = " + total);
+}
+}
+output:-
+20.19999999999996. 
+The output should have been 20.20 (20 dollars and 20 cents), but the floating point calculation made it 20.19999999999996. 
+
+
+
+
+
+
