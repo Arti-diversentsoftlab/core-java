@@ -1,0 +1,56 @@
+what are the different buzz words used for java?
+Simple
+Java is designed to be easy to learn. If you understand the basic concept of OOP Java, it would be easy to master.
+Secure
+With Java's secure feature it enables to develop virus-free, tamper-free systems. Authentication techniques are based on public-key encryption.
+Architecture-neutral
+Java compiler generates an architecture-neutral object file format, which makes the compiled code executable on many processors, with the presence of Java runtime system.
+Portable
+Being architecture-neutral and having no implementation dependent aspects of the specification makes Java portable. The compiler in Java is written in ANSI C with a clean portability boundary, which is a POSIX subset.
+Robust
+Java makes an effort to eliminate error-prone situations by emphasizing mainly on compile time error checking and runtime checking.
+Multithreaded
+With Java's multithreaded feature it is possible to write programs that can perform many tasks simultaneously. This design feature allows the developers to construct interactive applications that can run smoothly.
+Interpreted
+Java byte code is translated on the fly to native machine instructions and is not stored anywhere. The development process is more rapid and analytical since the linking is an incremental and light-weight process.
+High Performance
+With the use of Just-In-Time compilers, Java enables high performance.
+Distributed
+Java is designed for the distributed environment of the internet.
+Dynamic
+Java is considered to be more dynamic than C or C++ since it is designed to adapt to an evolving environment. Java programs can carry an extensive amount of run-time information that can be used to verify and resolve accesses to objects at run-time. 
+2.	write hello world program and use  commands javac,javap and java. 
+class hello{
+public static void main(String[] args) {
+System.out.println("hello world");
+		}
+}
+Output:-
+C:\Users\lenovo>cd desktop
+
+C:\Users\lenovo\Desktop>javac hello.java
+
+C:\Users\lenovo\Desktop>java hello
+hello world
+
+C:\Users\lenovo\Desktop>javap hello
+Compiled from "hello.java"
+class hello {
+  hello();
+  public static void main(java.lang.String[]);
+}
+use jshell and try it 
+ 1. 
+ “core java”.length()      
+    jshell> "Core java".length()       
+ $3 ==> 9   
+Arithmetic operations like “int answer = 6*7”       
+ jshell> int answer = 6*7        
+answer ==> 42       
+3.1) Use references like this in arithmetic operations “$1”, which got generated in previous operations.       
+ jshell> 6 * $3        
+$7 ==> 54    
+3.2)Check various methods in a particular class with Math.<press tab>  jshell> Math.       
+
+                     IEEEremainder(    PI                abs(               acos(             addExact(        asin(             atan(             atan2(            cbrt(               ceil(             class        copySign(         cos(              cosh(             decrementExact(   exp(              expm1(        floor(            floorDiv(         floorMod(         fma(              getExponent(      hypot(        incrementExact(   log(              log10(            log1p(            max(              min(        multiplyExact(    multiplyFull(     multiplyHigh(     negateExact(      nextAfter(        nextDown(        nextUp(           pow(              random()          rint(             round(            scalb(        signum(           sin(              sinh(             sqrt(             subtractExact(    tan(        tanh(             toDegrees(        toIntExact(       toRadians(        ulp(
+
