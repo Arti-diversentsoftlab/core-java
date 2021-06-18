@@ -1,0 +1,73 @@
+                                      Assignment 3
+(1)where we can use the strictfp?
+  strictfp can be applied to class, method or on interfaces but cannot be applied to abstract methods,   variable or on constructors.
+
+(2)In which case you will use strictfp, "Optimum performance" or "Perfect reproducibility"?fp
+    strictfp use in case of Optimum performace.
+ 
+(3) In which call cases you cannot use "strictfp"
+strictfp cannot be used with abstract methods. However, it can be used with abstract classes/interfaces.
+Since methods of an interface are implicitly abstract, strictfp cannot be used with any method inside an interface.
+
+(4)What would be the values of a,b,m and n after execution of these two statements?
+   int a = 2 * ++m; // now a is 18, m is 8
+   int b = 2 * n++; // now b is 16, n is 8
+++m this is preincreament so value will increament in m(8 to 9) first then value will assign in m(m=9)
+a=2*9=>18
+n++ postincreament expression so value will assign in n(8)first then it will increament
+b=2*8=>16.
+
+(5)Why the logical operators "&&" and "||" called "short circuit" operators.
+expr1 && expr2 represents a logical AND operation that employs short-circuiting behavior. ... Each expression must evaluate to a scalar logical result. expr1 || expr2 represents a logical OR operation that employs short-circuiting behavior. That is, expr2 is not evaluated if expr1 is logical 1 ( true ).
+
+(6)Why should we use Math.multiplyExact and other xxExact methods?
+The java.lang.Math.mutliplyExact() returns the product of the arguments. It will throw an exception if the result overflows either int or long.
+math.addExact
+math.subtractExact
+math.multiplyExact
+math.incrementExact
+math.decrementExact
+math.negateExact
+these all use for anther operations like addition and all.
+
+(7)What is widening?  type casting and what is narrowing type casting.
+*converting a lower type data in to higher one is called widening type casing also known as implicit conversion.
+*converting a higher  data type in to lower one is called narrowing type casing also known as explicit conversion.
+<------------ widening casting.
+double ->float->long->int->short->byte.
+------->narrowing casting.
+
+(8)What are the four rules that are applied in binary operations on numbers.
+1)If either of the operands is of type double, the other one will be converted to a double.
+2)Otherwise, if either of the operands is of type ?oat, the other one will be 
+converted to a ?oat.
+3)Otherwise, if either of the operands is of type long, the other one will be 
+converted to a long.
+4)Otherwise, both operands will be converted to an int.
+
+(9)What are different ways of declaring an array in Java
+1.oneDimArray
+_____________
+Initializing array. int[] array = new int[5]; 
+Array Declaration. int[] array; 
+ int[] array = {11,12,13,14,15};
+2.multiDArray
+_____________
+int [][]arr;
+int [][]arr=new [row][col];
+int [][]arr={{1,2},{2,1}};
+
+(10)Why we say that multidimensional arrays in Java are “arrays of arrays”.
+Many languages reserve a block of memory large enough to hold all elements of the full, rectangular, array (number of rows times number of columns times the element size). Some languages, like Java, build multi-dimensional arrays from many one-dimensional arrays, the so-called "arrays of arrays" approach.
+
+(11)What do we mean by “ragged” arrays?
+It is also easy to make  “ragged”arrays—that is, arrays in which different rows have different lengths.
+
+(12)use of biginteger and bigdecimal.
+BigInteger class is used for mathematical operation which involves very big integer calculations that are outside the limit of all available primitive data types.
+The BigDecimal class provides operations on double numbers for arithmetic, scale handling, rounding, comparison, format conversion and hashing. It can handle very large and very small floating point numbers with great precision but compensating with the time complexity a bit.
+
+
+
+
+
