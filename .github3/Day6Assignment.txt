@@ -1,0 +1,119 @@
+Assignment Day 6 (Classes and Objects)
+1.Primitive method parameters are call-by-reference or call-by-value?
+Ans:- call by value
+2.The “object reference” method parameters are call-by-reference or call-by-value?
+ Ans:-call by reference
+3.Write the program given in the PPT that explains how the “object references” are passed.
+classA{
+	public   void chanemyString(StringBuffer  str1) {
+		str1=new StringBuffer("another String");
+		System.out.println(str1.toString());
+	}
+	public  void mymethod() {
+		StringBuffer str= new StringBuffer("testing");
+		System.out.println(str.toString());
+	this.chanemyString(str);
+		System.out.println(str.toString());
+
+	}
+	
+public static void main(String[] args) {
+	classA v=new classA();
+	v.mymethod();
+	
+}
+}
+
+firstly method mymethod()  contain a str with "testing ",so it will return ans "testing " and when i call method changemyString(), it contain "another String" so after calling this method it will retrun "another String" then again Str will convert into "testing " because scope of "another String " is in changemystring() method .
+4.What is the method overloading? Write a program to explain it.
+Method overloading is a feature of Java in which a class has more than one method of the same name and their parameters are different.” ... When more than one method of the same name is created in a Class, this type of method is called Overloaded Methods.
+
+5.Overloading is compile time binding or run time binding?
+Ans:- compile time binding.
+6.What is the default values of the different types of class fields?
+Ans:-If there are no constructors written for a class, Java provides a no-argument default constructor where the instance variables are set to their default values. For int and double variables, the default value used is 0, and for String and other object variables, the default is null.
+7.What is the default values of the different types of local variables?
+there is no default value for local variable in java you have to initialized a value . 
+8.Do you get no argument constructor always? Write a class that have parametrized constructor and see if the default constructor is available?
+public class defaultconstructor {
+	public  defaultconstructor(int a,int b) {
+		System.out.println(a+b);
+	}
+	public static void main(String[] args) {
+		defaultconstructor n=new defaultconstructor(4,5);
+		
+}
+default constructor is no here.
+
+11.Can any statement appear before “this(..)” in the constructor?
+no we can not use . this use for current value ,instances and object not for statement.
+14.What is the use of finalize method, why it was deprecated?
+The finalize() method of Object class is a method that the Garbage Collector always calls just before the deletion/destroying the object which is eligible for Garbage Collection, so as to perform clean-up activity.
+Yes it could be used in wrong way (like save an object from garbage collecting [only one time though] or try to close some native resources within it [it's better than don't close at all though]) as well as many other methods could be used wrongly.
+15.What should be the format of package name?
+Ans:-The main reason for using packages is to guarantee the uniqueness of class  names.
+16.What is the use of “import static”, write a program for the same.
+Static import is a feature introduced in the Java programming language that allows members (fields and methods) which have been scoped within their container class as public static, to be used in Java code without specifying the class in which the field has been defined. This feature was introduced into the language in version 5.0.
+17.Explain access modifiers “public”, “private”, default, “protected”?
+Ans:-
+1)Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+2)Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+3)Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+4)Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+
+18.What are the class design guidelines?
+? Always keep data private.
+? Always initialize data.
+? Don’t use too many basic types in a class.The idea is to replace multiple related uses of basic types with other classes. Like, Address.
+? Not all ?elds need individual ?eld accessors and mutators. Example, you may need to get and set an employee’s salary. You certainly won’t need to change 
+the hiring date once the object is constructed.
+? Break up classes that have too many responsibilities.
+? Make the names of your classes and methods re?ect their responsibilities.
+
+19.What is the utility/command to create a jar file? Use it to create a jar file.
+1)Start Command Prompt.
+2)Navigate to the folder that holds your class files:
+C:\>cd \desktop
+3)Set path to include JDK’s bin.  For example:
+C:\dekstop> path c:\Program Files\Java\jdk1.7.0_25\bin;%path%
+Compile your class(es):
+C:\dekstop> javac *.java
+Create a manifest file and your jar file:
+C:\dekstop> echo Main-Class: Craps >manifest.txt
+C:\dekstop> jar cvfm Craps.jar manifest.txt *.class
+or
+C:\dekstop> jar cvfe Craps.jar Craps *.class
+Test your jar:
+C:\dekstop> Craps.jar
+or
+C:\dekstop> java -jar Craps.jar
+
+20.What is the utility/command to create Javadoc? Use it to generate the JavaDocs.
+
+C:\Users\lenovo>cd desktop
+
+C:\Users\lenovo\Desktop>javac person.java
+
+C:\Users\lenovo\Desktop>cd..
+
+C:\Users\lenovo>javadoc desktop\person.java
+Loading source file desktop\person.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_121
+Building tree for all the packages and classes...
+Generating .\person.html...
+Generating .\package-frame.html...
+Generating .\package-summary.html...
+Generating .\package-tree.html...
+Generating .\constant-values.html...
+Building index for all the packages and classes...
+Generating .\overview-tree.html...
+Generating .\index-all.html...
+Generating .\deprecated-list.html...
+Building index for all classes...
+Generating .\allclasses-frame.html...
+Generating .\allclasses-noframe.html...
+Generating .\index.html...
+Generating .\help-doc.html...
+
+C:\Users\lenovo>
